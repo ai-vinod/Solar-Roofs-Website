@@ -1,15 +1,49 @@
 // Initialize AOS (Animate On Scroll) library
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS animation with enhanced settings
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: false,
-        mirror: true,
-        offset: 120,
-        delay: 100,
-        anchorPlacement: 'top-bottom'
-    });
+    // Initialize AOS animation with enhanced settings (for other pages)
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: true,
+            offset: 120,
+            delay: 100,
+            anchorPlacement: 'top-bottom'
+        });
+    }
+
+    // Custom slide-in-left animation for portfolio page
+    function initSlideInLeftAnimations() {
+        const slideElements = document.querySelectorAll('.slide-in-left');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const delay = element.getAttribute('data-delay') || 0;
+                    
+                    setTimeout(() => {
+                        element.classList.add('animate');
+                    }, parseInt(delay));
+                    
+                    observer.unobserve(element);
+                }
+            });
+        }, observerOptions);
+        
+        slideElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+    
+    // Initialize slide-in animations
+    initSlideInLeftAnimations();
 
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');

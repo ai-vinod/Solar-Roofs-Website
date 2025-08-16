@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Solar Rooftop Solutions</title>
-    <link rel="stylesheet" href="css/styles.css?v=1.1">
+    <link rel="stylesheet" href="css/styles.css?v=1.2">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts -->
@@ -23,7 +23,7 @@
         
         .portfolio-content {
             padding: 80px 0;
-            background-color: var(--white);
+            background-color: #eef5e9; /* Light green background matching homepage */
         }
         
         .portfolio-filters {
@@ -274,8 +274,8 @@
     <!-- Portfolio Hero Section -->
     <section class="portfolio-hero">
         <div class="container">
-            <h1 data-aos="fade-up">Our Solar Projects</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Explore our completed solar installations and success stories</p>
+            <h1 class="slide-in-left">Our Solar Projects</h1>
+            <p class="slide-in-left" data-delay="100">Explore our completed solar installations and success stories</p>
         </div>
     </section>
 
@@ -283,12 +283,12 @@
     <section class="portfolio-content">
         <div class="container">
             <div class="section-header">
-                <h2 data-aos="fade-up">Featured Projects</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Browse through our diverse portfolio of solar installations</p>
+                <h2 class="slide-in-left">Featured Projects</h2>
+                <p class="slide-in-left" data-delay="100">Browse through our diverse portfolio of solar installations</p>
             </div>
             
             <!-- Portfolio Filters -->
-            <div class="portfolio-filters" data-aos="fade-up">
+            <div class="portfolio-filters slide-in-left" data-delay="200">
                 <button class="portfolio-filter active" data-filter="all">All Projects</button>
                 <button class="portfolio-filter" data-filter="residential">Residential</button>
                 <button class="portfolio-filter" data-filter="commercial">Commercial</button>
@@ -298,8 +298,8 @@
             <!-- Portfolio Grid -->
             <div class="portfolio-grid">
                 <!-- Project 1 -->
-                <div class="portfolio-item" data-category="residential" data-aos="fade-up" data-aos-delay="100">
-                    <div class="portfolio-image" data-aos="zoom-in" data-aos-delay="150">
+                <div class="portfolio-item slide-in-left" data-category="residential" data-delay="300">
+                    <div class="portfolio-image">
                         <img src="images/project-1.jpg.svg" alt="Modern Home Solar Installation">
                         <div class="portfolio-overlay">
                             <h3>Modern Home Solar</h3>
@@ -307,7 +307,7 @@
                             <a href="#" class="portfolio-button">View Details</a>
                         </div>
                     </div>
-                    <div class="portfolio-details" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-details">
                         <h3>Modern Home Solar Installation</h3>
                         <p>A complete 15kW solar system with battery backup for a modern family home in Sunshine Valley.</p>
                         <div class="portfolio-meta">
@@ -318,8 +318,8 @@
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="portfolio-item" data-category="commercial" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-image" data-aos="zoom-in" data-aos-delay="250">
+                <div class="portfolio-item slide-in-left" data-category="commercial" data-delay="400">
+                    <div class="portfolio-image">
                         <img src="images/project-2.jpg.svg" alt="Office Building Solar Array">
                         <div class="portfolio-overlay">
                             <h3>Corporate Office Solar</h3>
@@ -327,7 +327,7 @@
                             <a href="#" class="portfolio-button">View Details</a>
                         </div>
                     </div>
-                    <div class="portfolio-details" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-details">
                         <h3>Office Building Solar Array</h3>
                         <p>A 50kW commercial solar installation for a corporate office building, reducing their energy costs by 40%.</p>
                         <div class="portfolio-meta">
@@ -338,7 +338,7 @@
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="portfolio-item" data-category="residential" data-aos="fade-up" data-aos-delay="300">
+                <div class="portfolio-item slide-in-left" data-category="residential" data-delay="500">
                     <div class="portfolio-image">
                         <img src="images/project-3.jpg.svg" alt="Suburban Home Solar">
                         <div class="portfolio-overlay">
@@ -358,7 +358,7 @@
                 </div>
                 
                 <!-- Project 4 -->
-                <div class="portfolio-item" data-category="industrial" data-aos="fade-up" data-aos-delay="400">
+                <div class="portfolio-item slide-in-left" data-category="industrial" data-delay="600">
                     <div class="portfolio-image">
                         <img src="images/project-4.jpg.svg" alt="Manufacturing Plant Solar">
                         <div class="portfolio-overlay">
@@ -378,7 +378,7 @@
                 </div>
                 
                 <!-- Project 5 -->
-                <div class="portfolio-item" data-category="commercial" data-aos="fade-up" data-aos-delay="500">
+                <div class="portfolio-item slide-in-left" data-category="commercial" data-delay="700">
                     <div class="portfolio-image">
                         <img src="images/project-5.jpg.svg" alt="Retail Center Solar">
                         <div class="portfolio-overlay">
@@ -398,7 +398,7 @@
                 </div>
                 
                 <!-- Project 6 -->
-                <div class="portfolio-item" data-category="residential" data-aos="fade-up" data-aos-delay="600">
+                <div class="portfolio-item slide-in-left" data-category="residential" data-delay="800">
                     <div class="portfolio-image">
                         <img src="images/project-6.jpg.svg" alt="Luxury Villa Solar">
                         <div class="portfolio-overlay">
@@ -424,13 +424,13 @@
     <section class="testimonial-section">
         <div class="container">
             <div class="section-header">
-                <h2 data-aos="fade-up">Client Testimonials</h2>
-                <p data-aos="fade-up" data-aos-delay="100">What our satisfied customers have to say about our solar solutions</p>
+                <h2 class="slide-in-left">Client Testimonials</h2>
+                <p class="slide-in-left" data-delay="100">What our satisfied customers have to say about our solar solutions</p>
             </div>
             
             <div class="testimonial-grid">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card slide-in-left" data-delay="200">
                     <div class="testimonial-content">
                         <p>"Solar Rooftop Solutions transformed our home with their excellent solar installation. We're now saving over 80% on our electricity bills and the system looks fantastic on our roof. Their team was professional and efficient throughout the entire process."</p>
                     </div>
@@ -451,7 +451,7 @@
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card slide-in-left" data-delay="300">
                     <div class="testimonial-content">
                         <p>"As a business owner, I was looking for ways to reduce our operational costs and become more sustainable. Solar Rooftop Solutions delivered an exceptional commercial solar solution that exceeded our expectations. The ROI has been impressive!"</p>
                     </div>
@@ -472,7 +472,7 @@
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-card slide-in-left" data-delay="400">
                     <div class="testimonial-content">
                         <p>"The team at Solar Rooftop Solutions guided us through every step of the solar installation process. Their knowledge and attention to detail were impressive. We're now enjoying clean, renewable energy and significant savings on our monthly bills."</p>
                     </div>
@@ -498,9 +498,9 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 data-aos="fade-up">Ready to Start Your Solar Journey?</h2>
-            <p data-aos="fade-up" data-aos-delay="100">Contact us today for a free consultation and join our growing list of satisfied customers.</p>
-            <a href="contact.html" class="cta-button" data-aos="fade-up" data-aos-delay="200">Get Started</a>
+            <h2 class="slide-in-left">Ready to Start Your Solar Journey?</h2>
+            <p class="slide-in-left" data-delay="100">Contact us today for a free consultation and join our growing list of satisfied customers.</p>
+            <a href="contact.html" class="cta-button slide-in-left" data-delay="200">Get Started</a>
         </div>
     </section>
 
@@ -548,7 +548,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 Solar Rooftop Solutions. All Rights Reserved.</p>
+            <p>&copy; 2025 Solar Rooftop Solutions. All Rights Reserved.</p>
         </div>
     </footer>
 

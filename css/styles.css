@@ -23,6 +23,7 @@ body {
     line-height: 1.6;
     color: var(--dark-gray);
     overflow-x: hidden;
+    background-color: #f9f9f7; /* Light cream/beige background instead of white */
 }
 
 a {
@@ -38,7 +39,8 @@ ul {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 5%;
+    box-sizing: border-box;
 }
 
 img {
@@ -186,22 +188,65 @@ header {
     background-color: var(--dark-gray);
 }
 
-/* Hero Section */
+/* Hero Section with Slideshow */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    position: relative;
     color: var(--white);
-    padding: 0 20px;
+    text-align: left;
+    overflow: hidden;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Slides */
+.slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Active slide */
+.slide.active {
+    display: block;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 600px;
+    z-index: 2;
+    position: relative;
+    padding: 0 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .hero h1 {
@@ -224,7 +269,7 @@ header {
 
 /* Benefits Section */
 .benefits {
-    background-color: var(--light-gray);
+    background-color: #eef5e9; /* Light green background that complements solar theme */
 }
 
 .benefits-container {
@@ -303,7 +348,8 @@ header {
 
 /* Why Choose Us Section */
 .why-choose-us {
-    background-color: var(--white);
+    background-color: #f9f9f7; /* Matching the body background */
+    padding: 100px 0;
 }
 
 .content-wrapper {
@@ -311,6 +357,9 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
 }
 
 .text-content {
@@ -401,9 +450,12 @@ header {
 
 /* Footer */
 footer {
-    background-color: #222;
+    background-color: #1a2a36; /* Darker blue that complements solar theme */
     color: var(--white);
     padding: 70px 0 0;
+    position: relative;
+    margin-top: 50px;
+    border-top: 5px solid var(--primary-yellow); /* Yellow border at the top of footer */
 }
 
 .footer-container {
@@ -412,7 +464,8 @@ footer {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 5%;
+    width: 100%;
 }
 
 .footer-column h3 {
@@ -497,7 +550,9 @@ footer {
 
 .footer-bottom {
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 5%;
+    width: 100%;
+    background-color: #142430; /* Even darker shade for the bottom bar */
     margin-top: 50px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -505,6 +560,41 @@ footer {
 .footer-bottom p {
     color: #bbb;
     font-size: 0.9rem;
+}
+
+/* Slideshow Navigation Dots */
+.slideshow-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--white);
+}
+
+/* Fade Animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
 }
 
 /* Responsive Design */

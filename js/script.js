@@ -21,6 +21,51 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('active');
         });
     }
+    
+    // Slideshow functionality
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    // Initialize slideshow
+    if (slides.length > 0) {
+        showSlides();
+    }
+    
+    // Show slides function
+    function showSlides() {
+        // Hide all slides
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            dots[i].classList.remove('active');
+        }
+        
+        // Increment slide index
+        slideIndex++;
+        
+        // Reset to first slide if at the end
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        
+        // Display current slide and highlight dot
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add('active');
+        
+        // Change slide every 5 seconds
+        setTimeout(showSlides, 5000);
+    }
+    
+    // Function to navigate to a specific slide when dot is clicked
+    window.currentSlide = function(n) {
+        slideIndex = n - 1;
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            dots[i].classList.remove('active');
+        }
+        slides[slideIndex].style.display = "block";
+        dots[slideIndex].classList.add('active');
+    }
 
     // Close mobile menu when clicking on a nav link
     document.querySelectorAll('.nav-links li a').forEach(link => {

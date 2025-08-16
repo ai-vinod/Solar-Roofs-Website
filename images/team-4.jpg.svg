@@ -1,11 +1,17 @@
 <svg width="400" height="500" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="400" height="500" fill="#f4f4f4" />
+  <rect width="400" height="500" fill="#f5f5f5" />
+  
+  <!-- Professional Photo Background -->
+  <rect x="50" y="50" width="300" height="300" fill="#e0e0e0" rx="5" ry="5" />
   
   <!-- Person Silhouette -->
   <g transform="translate(200, 180)">
     <!-- Head -->
     <circle cx="0" cy="0" r="70" fill="#9B59B6" />
+    
+    <!-- Long Hair -->
+    <path d="M-70,-10 Q-80,-40 -70,-70 Q-40,-100 0,-100 Q40,-100 70,-70 Q80,-40 70,-10 Q70,30 60,70 Q40,100 0,100 Q-40,100 -60,70 Q-70,30 -70,-10" fill="#5D4037" />
     
     <!-- Face Features -->
     <circle cx="-25" cy="-15" r="8" fill="white" /> <!-- Left eye -->
@@ -13,11 +19,15 @@
     <circle cx="-25" cy="-15" r="4" fill="#333" /> <!-- Left pupil -->
     <circle cx="25" cy="-15" r="4" fill="#333" /> <!-- Right pupil -->
     
-    <!-- Smile -->
-    <path d="M-30,20 Q0,50 30,20" stroke="white" stroke-width="4" fill="transparent" />
+    <!-- Eyebrows -->
+    <path d="M-40,-30 Q-30,-35 -15,-30" stroke="#5D4037" stroke-width="3" fill="transparent" />
+    <path d="M40,-30 Q30,-35 15,-30" stroke="#5D4037" stroke-width="3" fill="transparent" />
     
-    <!-- Long Hair -->
-    <path d="M-70,-10 Q-80,-40 -70,-70 Q-40,-100 0,-100 Q40,-100 70,-70 Q80,-40 70,-10 Q70,30 60,70 Q40,100 0,100 Q-40,100 -60,70 Q-70,30 -70,-10" fill="#5D4037" />
+    <!-- Nose -->
+    <path d="M0,-15 L5,10 L0,15" stroke="#333" stroke-width="2" fill="transparent" />
+    
+    <!-- Smile -->
+    <path d="M-30,20 Q0,40 30,20" stroke="white" stroke-width="4" fill="transparent" />
     
     <!-- Business Attire -->
     <rect x="-60" y="70" width="120" height="150" fill="#8E44AD" />
@@ -33,8 +43,8 @@
     <rect x="60" y="70" width="40" height="20" fill="#8E44AD" rx="10" ry="10" />
   </g>
   
-  <!-- Name Tag -->
-  <rect x="100" y="350" width="200" height="50" fill="#9B59B6" rx="5" ry="5" />
-  <text x="200" y="380" font-family="Arial" font-size="20" fill="white" text-anchor="middle">Emily Rodriguez</text>
-  <text x="200" y="400" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Customer Relations Manager</text>
+  <!-- Professional Details -->
+  <rect x="50" y="370" width="300" height="80" fill="#9B59B6" rx="5" ry="5" />
+  <text x="200" y="405" font-family="Arial" font-size="22" font-weight="bold" fill="white" text-anchor="middle">Emily Rodriguez</text>
+  <text x="200" y="435" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Customer Relations Manager</text>
 </svg>

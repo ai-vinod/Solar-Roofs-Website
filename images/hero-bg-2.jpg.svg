@@ -1,0 +1,90 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF7E00" />
+      <stop offset="100%" stop-color="#FFB74D" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background (sunset) -->
+  <rect width="1200" height="800" fill="url(#skyGradient)" />
+  
+  <!-- Sun setting -->
+  <circle cx="300" cy="200" r="100" fill="#FF5722" />
+  <circle cx="300" cy="200" r="120" fill="#FF5722" opacity="0.3" />
+  <circle cx="300" cy="200" r="140" fill="#FF5722" opacity="0.1" />
+  
+  <!-- Modern building with solar panels -->
+  <g transform="translate(400, 250)">
+    <!-- Building structure -->
+    <rect x="0" y="100" width="600" height="350" fill="#455A64" />
+    
+    <!-- Windows grid -->
+    <g>
+      <!-- Row 1 -->
+      <rect x="50" y="150" width="60" height="60" fill="#90A4AE" />
+      <rect x="150" y="150" width="60" height="60" fill="#90A4AE" />
+      <rect x="250" y="150" width="60" height="60" fill="#90A4AE" />
+      <rect x="350" y="150" width="60" height="60" fill="#90A4AE" />
+      <rect x="450" y="150" width="60" height="60" fill="#90A4AE" />
+      
+      <!-- Row 2 -->
+      <rect x="50" y="250" width="60" height="60" fill="#90A4AE" />
+      <rect x="150" y="250" width="60" height="60" fill="#90A4AE" />
+      <rect x="250" y="250" width="60" height="60" fill="#90A4AE" />
+      <rect x="350" y="250" width="60" height="60" fill="#90A4AE" />
+      <rect x="450" y="250" width="60" height="60" fill="#90A4AE" />
+      
+      <!-- Row 3 -->
+      <rect x="50" y="350" width="60" height="60" fill="#90A4AE" />
+      <rect x="150" y="350" width="60" height="60" fill="#90A4AE" />
+      <rect x="250" y="350" width="60" height="60" fill="#90A4AE" />
+      <rect x="350" y="350" width="60" height="60" fill="#90A4AE" />
+      <rect x="450" y="350" width="60" height="60" fill="#90A4AE" />
+    </g>
+    
+    <!-- Roof with solar panels -->
+    <rect x="-50" y="50" width="700" height="50" fill="#263238" />
+    
+    <!-- Solar panels on roof -->
+    <g>
+      <!-- Row 1 -->
+      <rect x="0" y="0" width="80" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="2" />
+      <rect x="90" y="0" width="80" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="2" />
+      <rect x="180" y="0" width="80" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="2" />
+      <rect x="270" y="0" width="80" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="2" />
+      <rect x="360" y="0" width="80" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="2" />
+      <rect x="450" y="0" width="80" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="2" />
+    </g>
+    
+    <!-- Entrance -->
+    <rect x="250" y="400" width="100" height="50" fill="#1A237E" />
+  </g>
+  
+  <!-- People looking at the building -->
+  <g transform="translate(600, 650)">
+    <!-- Person 1 -->
+    <circle cx="0" cy="0" r="15" fill="#795548" />
+    <rect x="-5" y="15" width="10" height="30" fill="#3F51B5" />
+    <line x1="-5" y1="25" x2="-15" y2="40" stroke="#3F51B5" stroke-width="5" />
+    <line x1="5" y1="25" x2="15" y2="40" stroke="#3F51B5" stroke-width="5" />
+    <line x1="0" y1="45" x2="-10" y2="70" stroke="#3F51B5" stroke-width="5" />
+    <line x1="0" y1="45" x2="10" y2="70" stroke="#3F51B5" stroke-width="5" />
+    
+    <!-- Person 2 -->
+    <circle cx="50" cy="0" r="15" fill="#FFC107" />
+    <rect x="45" y="15" width="10" height="30" fill="#4CAF50" />
+    <line x1="45" y1="25" x2="35" y2="40" stroke="#4CAF50" stroke-width="5" />
+    <line x1="55" y1="25" x2="65" y2="40" stroke="#4CAF50" stroke-width="5" />
+    <line x1="50" y1="45" x2="40" y2="70" stroke="#4CAF50" stroke-width="5" />
+    <line x1="50" y1="45" x2="60" y2="70" stroke="#4CAF50" stroke-width="5" />
+  </g>
+  
+  <!-- Text overlay -->
+  <g transform="translate(100, 100)">
+    <text font-family="Arial" font-size="40" font-weight="bold" fill="white" text-anchor="start">
+      SOLAR ENERGY FOR MODERN BUILDINGS
+    </text>
+  </g>
+</svg>

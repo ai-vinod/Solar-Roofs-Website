@@ -42,7 +42,7 @@ This is a responsive website for Solar Rooftop Solutions, a company specializing
    ```
    git commit -m "Initial commit"
    ```
-5. Push to GitHub:
+5. Push to GitHub:   
    ```
    git push origin main
    ```

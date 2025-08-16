@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Solar Rooftop Solutions</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Library for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="description" content="View our portfolio of completed solar rooftop projects for residential, commercial, and industrial clients.">
+    <style>
+        /* Portfolio Page Specific Styles */
+        .portfolio-hero {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(46, 204, 113, 0.9));
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .portfolio-content {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .portfolio-filter {
+            padding: 8px 20px;
+            margin: 5px;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: var(--font-primary);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .portfolio-filter:hover,
+        .portfolio-filter.active {
+            background-color: var(--primary-yellow);
+            color: var(--white);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h3 {
+            color: var(--white);
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .portfolio-overlay p {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .portfolio-details {
+            padding: 20px;
+            background-color: var(--white);
+        }
+        
+        .portfolio-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+        
+        .portfolio-details p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .portfolio-meta {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--light-gray);
+            padding-top: 15px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .portfolio-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .portfolio-meta i {
+            margin-right: 5px;
+            color: var(--primary-yellow);
+        }
+        
+        .portfolio-button {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+        
+        .portfolio-button:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+        
+        .testimonial-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-content {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-content::before {
+            content: '\201C';
+            font-size: 60px;
+            color: var(--primary-yellow);
+            position: absolute;
+            left: 0;
+            top: -20px;
+            font-family: serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            margin: 0 0 5px;
+            color: var(--dark-gray);
+        }
+        
+        .author-info p {
+            margin: 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: var(--primary-yellow);
+            margin-top: 5px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .portfolio-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Solar Rooftop <span>Solutions</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Portfolio Hero Section -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Our Solar Projects</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Explore our completed solar installations and success stories</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Content -->
+    <section class="portfolio-content">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Featured Projects</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Browse through our diverse portfolio of solar installations</p>
+            </div>
+            
+            <!-- Portfolio Filters -->
+            <div class="portfolio-filters" data-aos="fade-up">
+                <button class="portfolio-filter active" data-filter="all">All Projects</button>
+                <button class="portfolio-filter" data-filter="residential">Residential</button>
+                <button class="portfolio-filter" data-filter="commercial">Commercial</button>
+                <button class="portfolio-filter" data-filter="industrial">Industrial</button>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-category="residential" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-image" data-aos="zoom-in" data-aos-delay="150">
+                        <img src="images/project-1.jpg.svg" alt="Modern Home Solar Installation">
+                        <div class="portfolio-overlay">
+                            <h3>Modern Home Solar</h3>
+                            <p>15kW system with battery storage</p>
+                            <a href="#" class="portfolio-button">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Modern Home Solar Installation</h3>
+                        <p>A complete 15kW solar system with battery backup for a modern family home in Sunshine Valley.</p>
+                        <div class="portfolio-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Sunshine Valley</span>
+                            <span><i class="fas fa-calendar-alt"></i> January 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-category="commercial" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-image" data-aos="zoom-in" data-aos-delay="250">
+                        <img src="images/project-2.jpg.svg" alt="Office Building Solar Array">
+                        <div class="portfolio-overlay">
+                            <h3>Corporate Office Solar</h3>
+                            <p>50kW commercial installation</p>
+                            <a href="#" class="portfolio-button">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Office Building Solar Array</h3>
+                        <p>A 50kW commercial solar installation for a corporate office building, reducing their energy costs by 40%.</p>
+                        <div class="portfolio-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Downtown Business District</span>
+                            <span><i class="fas fa-calendar-alt"></i> March 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-category="residential" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-image">
+                        <img src="images/project-3.jpg.svg" alt="Suburban Home Solar">
+                        <div class="portfolio-overlay">
+                            <h3>Suburban Home Solar</h3>
+                            <p>10kW system with smart monitoring</p>
+                            <a href="#" class="portfolio-button">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3>Suburban Home Solar Installation</h3>
+                        <p>A 10kW solar system with smart monitoring for a suburban family home, providing clean energy year-round.</p>
+                        <div class="portfolio-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Green Meadows</span>
+                            <span><i class="fas fa-calendar-alt"></i> April 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="portfolio-item" data-category="industrial" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-image">
+                        <img src="images/project-4.jpg.svg" alt="Manufacturing Plant Solar">
+                        <div class="portfolio-overlay">
+                            <h3>Manufacturing Plant</h3>
+                            <p>200kW industrial installation</p>
+                            <a href="#" class="portfolio-button">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3>Manufacturing Plant Solar Array</h3>
+                        <p>A massive 200kW industrial solar installation for a manufacturing plant, significantly reducing their carbon footprint.</p>
+                        <div class="portfolio-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Industrial Park</span>
+                            <span><i class="fas fa-calendar-alt"></i> May 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="portfolio-item" data-category="commercial" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-image">
+                        <img src="images/project-5.jpg.svg" alt="Retail Center Solar">
+                        <div class="portfolio-overlay">
+                            <h3>Retail Center Solar</h3>
+                            <p>75kW commercial installation</p>
+                            <a href="#" class="portfolio-button">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3>Retail Center Solar Installation</h3>
+                        <p>A 75kW solar system for a busy retail center, providing clean energy and significant cost savings.</p>
+                        <div class="portfolio-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Shoppers Plaza</span>
+                            <span><i class="fas fa-calendar-alt"></i> June 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="portfolio-item" data-category="residential" data-aos="fade-up" data-aos-delay="600">
+                    <div class="portfolio-image">
+                        <img src="images/project-6.jpg.svg" alt="Luxury Villa Solar">
+                        <div class="portfolio-overlay">
+                            <h3>Luxury Villa Solar</h3>
+                            <p>20kW premium installation</p>
+                            <a href="#" class="portfolio-button">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3>Luxury Villa Solar System</h3>
+                        <p>A premium 20kW solar installation with battery storage for a luxury villa, providing complete energy independence.</p>
+                        <div class="portfolio-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Hillside Estates</span>
+                            <span><i class="fas fa-calendar-alt"></i> July 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Client Testimonials</h2>
+                <p data-aos="fade-up" data-aos-delay="100">What our satisfied customers have to say about our solar solutions</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-content">
+                        <p>"Solar Rooftop Solutions transformed our home with their excellent solar installation. We're now saving over 80% on our electricity bills and the system looks fantastic on our roof. Their team was professional and efficient throughout the entire process."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/client-1.jpg.svg" alt="John & Sarah Thompson">
+                        <div class="author-info">
+                            <h4>John & Sarah Thompson</h4>
+                            <p>Residential Client</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-content">
+                        <p>"As a business owner, I was looking for ways to reduce our operational costs and become more sustainable. Solar Rooftop Solutions delivered an exceptional commercial solar solution that exceeded our expectations. The ROI has been impressive!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/client-2.jpg.svg" alt="Robert Chen">
+                        <div class="author-info">
+                            <h4>Robert Chen</h4>
+                            <p>Business Owner</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-content">
+                        <p>"The team at Solar Rooftop Solutions guided us through every step of the solar installation process. Their knowledge and attention to detail were impressive. We're now enjoying clean, renewable energy and significant savings on our monthly bills."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/client-3.jpg.svg" alt="Maria Rodriguez">
+                        <div class="author-info">
+                            <h4>Maria Rodriguez</h4>
+                            <p>Homeowner</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready to Start Your Solar Journey?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Contact us today for a free consultation and join our growing list of satisfied customers.</p>
+            <a href="contact.html" class="cta-button" data-aos="fade-up" data-aos-delay="200">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Solar Rooftop <span>Solutions</span></h3>
+                <p>Premium solar rooftop solutions for residential and commercial properties.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#residential">Residential Solar</a></li>
+                    <li><a href="services.html#commercial">Commercial Solar</a></li>
+                    <li><a href="services.html#maintenance">Maintenance</a></li>
+                    <li><a href="services.html#consultation">Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Solar Street, Sunshine City, SC 12345</li>
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> info@solarrooftopsolutions.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Solar Rooftop Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="js/script.min.js" defer></script>
+    <script>
+        // Portfolio Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.portfolio-filter');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filter portfolio items
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

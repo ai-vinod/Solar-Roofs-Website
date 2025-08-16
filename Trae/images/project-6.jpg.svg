@@ -1,0 +1,161 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f5f5f5"/>
+  
+  <!-- Sky -->
+  <rect width="800" height="300" fill="#87CEEB"/>
+  
+  <!-- Sun -->
+  <circle cx="700" cy="80" r="60" fill="#F9A826"/>
+  <circle cx="700" cy="80" r="50" fill="#FFDB58"/>
+  
+  <!-- Farm Setting -->
+  <g>
+    <!-- Farmhouse -->
+    <rect x="150" y="200" width="300" height="150" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+    
+    <!-- Roof -->
+    <polygon points="150,200 300,120 450,200" fill="#A0522D" stroke="#333" stroke-width="2"/>
+    
+    <!-- Solar Panels on Roof -->
+    <g>
+      <!-- Left Side -->
+      <rect x="180" y="160" width="50" height="40" fill="#2E4053" stroke="#333" stroke-width="1" transform="skewX(-15)"/>
+      <rect x="240" y="150" width="50" height="40" fill="#2E4053" stroke="#333" stroke-width="1" transform="skewX(-15)"/>
+      <rect x="300" y="140" width="50" height="40" fill="#2E4053" stroke="#333" stroke-width="1" transform="skewX(-15)"/>
+      
+      <!-- Right Side -->
+      <rect x="350" y="140" width="50" height="40" fill="#2E4053" stroke="#333" stroke-width="1" transform="skewX(15)"/>
+      <rect x="410" y="150" width="50" height="40" fill="#2E4053" stroke="#333" stroke-width="1" transform="skewX(15)"/>
+    </g>
+    
+    <!-- Windows -->
+    <rect x="180" y="230" width="40" height="40" fill="#ADD8E6" stroke="#333" stroke-width="1"/>
+    <rect x="250" y="230" width="40" height="40" fill="#ADD8E6" stroke="#333" stroke-width="1"/>
+    <rect x="320" y="230" width="40" height="40" fill="#ADD8E6" stroke="#333" stroke-width="1"/>
+    <rect x="380" y="230" width="40" height="40" fill="#ADD8E6" stroke="#333" stroke-width="1"/>
+    
+    <!-- Door -->
+    <rect x="280" y="300" width="40" height="50" fill="#8B4513" stroke="#333" stroke-width="2"/>
+    <circle cx="290" cy="325" r="3" fill="#FFD700"/>
+  </g>
+  
+  <!-- Barn -->
+  <g>
+    <rect x="500" y="200" width="200" height="150" fill="#A52A2A" stroke="#333" stroke-width="2"/>
+    
+    <!-- Roof -->
+    <polygon points="500,200 600,150 700,200" fill="#8B4513" stroke="#333" stroke-width="2"/>
+    
+    <!-- Solar Panels on Barn Roof -->
+    <g>
+      <rect x="520" y="170" width="40" height="30" fill="#2E4053" stroke="#333" stroke-width="1" transform="skewX(-10)"/>
+      <rect x="570" y="160" width="40" height="30" fill="#2E4053" stroke="#333" stroke-width="1" transform="skewX(-10)"/>
+      <rect x="620" y="170" width="40" height="30" fill="#2E4053" stroke="#333" stroke-width="1" transform="skewX(10)"/>
+      <rect x="670" y="180" width="40" height="30" fill="#2E4053" stroke="#333" stroke-width="1" transform="skewX(10)"/>
+    </g>
+    
+    <!-- Barn Door -->
+    <rect x="580" y="250" width="40" height="100" fill="#8B4513" stroke="#333" stroke-width="2"/>
+    <line x1="600" y1="250" x2="600" y2="350" stroke="#333" stroke-width="2"/>
+    <rect x="590" y="300" width="5" height="10" fill="#FFD700" stroke="#333" stroke-width="1"/>
+    <rect x="605" y="300" width="5" height="10" fill="#FFD700" stroke="#333" stroke-width="1"/>
+  </g>
+  
+  <!-- Ground -->
+  <rect width="800" height="150" y="350" fill="#8B4513"/>
+  
+  <!-- Fields -->
+  <rect x="0" y="350" width="800" height="20" fill="#2ECC71" stroke="#333" stroke-width="1"/>
+  
+  <!-- Crop Rows -->
+  <g stroke="#2ECC71" stroke-width="3">
+    <line x1="50" y1="380" x2="750" y2="380" />
+    <line x1="50" y1="400" x2="750" y2="400" />
+    <line x1="50" y1="420" x2="750" y2="420" />
+    <line x1="50" y1="440" x2="750" y2="440" />
+    <line x1="50" y1="460" x2="750" y2="460" />
+    <line x1="50" y1="480" x2="750" y2="480" />
+  </g>
+  
+  <!-- Solar Water Pump -->
+  <g>
+    <rect x="100" y="300" width="30" height="50" fill="#7F8C8D" stroke="#333" stroke-width="1"/> <!-- Pump Base -->
+    <rect x="105" y="280" width="20" height="20" fill="#3498DB" stroke="#333" stroke-width="1"/> <!-- Pump Head -->
+    <circle cx="115" cy="290" r="5" fill="#333" stroke="#333" stroke-width="1"/> <!-- Pump Detail -->
+    
+    <!-- Solar Panel for Pump -->
+    <rect x="80" y="250" width="70" height="20" fill="#2E4053" stroke="#333" stroke-width="1"/>
+    <line x1="115" y1="270" x2="115" y2="280" stroke="#333" stroke-width="1"/> <!-- Connection -->
+    
+    <!-- Water Sprinkler -->
+    <path d="M115 300 Q130 280 145 300 Q160 280 175 300" stroke="#3498DB" stroke-width="2" fill="none"/>
+    <path d="M115 300 Q100 280 85 300 Q70 280 55 300" stroke="#3498DB" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Battery Storage -->
+  <rect x="50" y="320" width="30" height="30" fill="#E8E8E8" stroke="#333" stroke-width="1"/>
+  <rect x="55" y="325" width="20" height="20" fill="#333" stroke="#333" stroke-width="1"/>
+  <circle cx="65" cy="335" r="5" fill="#3498DB"/>
+  
+  <!-- Tractor -->
+  <g>
+    <rect x="650" y="320" width="60" height="30" fill="#2ECC71" stroke="#333" stroke-width="1"/> <!-- Body -->
+    <rect x="670" y="300" width="20" height="20" fill="#2ECC71" stroke="#333" stroke-width="1"/> <!-- Cab -->
+    <circle cx="660" cy="350" r="10" fill="#333" stroke="#333" stroke-width="1"/> <!-- Wheel 1 -->
+    <circle cx="700" cy="350" r="10" fill="#333" stroke="#333" stroke-width="1"/> <!-- Wheel 2 -->
+  </g>
+  
+  <!-- Fence -->
+  <g stroke="#8B4513" stroke-width="2">
+    <line x1="0" y1="370" x2="800" y2="370" />
+    <line x1="20" y1="350" x2="20" y2="370" />
+    <line x1="60" y1="350" x2="60" y2="370" />
+    <line x1="100" y1="350" x2="100" y2="370" />
+    <line x1="140" y1="350" x2="140" y2="370" />
+    <line x1="180" y1="350" x2="180" y2="370" />
+    <line x1="220" y1="350" x2="220" y2="370" />
+    <line x1="260" y1="350" x2="260" y2="370" />
+    <line x1="300" y1="350" x2="300" y2="370" />
+    <line x1="340" y1="350" x2="340" y2="370" />
+    <line x1="380" y1="350" x2="380" y2="370" />
+    <line x1="420" y1="350" x2="420" y2="370" />
+    <line x1="460" y1="350" x2="460" y2="370" />
+    <line x1="500" y1="350" x2="500" y2="370" />
+    <line x1="540" y1="350" x2="540" y2="370" />
+    <line x1="580" y1="350" x2="580" y2="370" />
+    <line x1="620" y1="350" x2="620" y2="370" />
+    <line x1="660" y1="350" x2="660" y2="370" />
+    <line x1="700" y1="350" x2="700" y2="370" />
+    <line x1="740" y1="350" x2="740" y2="370" />
+    <line x1="780" y1="350" x2="780" y2="370" />
+  </g>
+  
+  <!-- Text Label -->
+  <text x="400" y="450" font-family="Arial" font-size="24" text-anchor="middle" fill="#FFFFFF">Agricultural Solar Project</text>
+  
+  <!-- Reflection on panels -->
+  <g opacity="0.2">
+    <ellipse cx="205" cy="150" rx="15" ry="8" fill="white"/>
+    <ellipse cx="265" cy="140" rx="15" ry="8" fill="white"/>
+    <ellipse cx="325" cy="130" rx="15" ry="8" fill="white"/>
+    <ellipse cx="375" cy="130" rx="15" ry="8" fill="white"/>
+    <ellipse cx="435" cy="140" rx="15" ry="8" fill="white"/>
+    
+    <ellipse cx="540" cy="165" rx="10" ry="5" fill="white"/>
+    <ellipse cx="590" cy="155" rx="10" ry="5" fill="white"/>
+    <ellipse cx="640" cy="165" rx="10" ry="5" fill="white"/>
+    <ellipse cx="690" cy="175" rx="10" ry="5" fill="white"/>
+  </g>
+  
+  <!-- Sun rays -->
+  <g stroke="#FFDB58" stroke-width="2" opacity="0.7">
+    <line x1="700" y1="10" x2="700" y2="0" />
+    <line x1="770" y1="80" x2="780" y2="80" />
+    <line x1="630" y1="80" x2="620" y2="80" />
+    <line x1="750" y1="30" x2="760" y2="20" />
+    <line x1="650" y1="30" x2="640" y2="20" />
+    <line x1="750" y1="130" x2="760" y2="140" />
+    <line x1="650" y1="130" x2="640" y2="140" />
+  </g>
+</svg>

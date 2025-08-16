@@ -1,0 +1,158 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f5f5f5"/>
+  
+  <!-- Sky -->
+  <rect width="800" height="300" fill="#87CEEB"/>
+  
+  <!-- Sun -->
+  <circle cx="650" cy="80" r="60" fill="#F9A826"/>
+  <circle cx="650" cy="80" r="50" fill="#FFDB58"/>
+  
+  <!-- House -->
+  <rect x="200" y="200" width="400" height="200" fill="#E8E8E8" stroke="#333" stroke-width="2"/>
+  
+  <!-- Roof -->
+  <polygon points="200,200 400,100 600,200" fill="#7F8C8D" stroke="#333" stroke-width="2"/>
+  
+  <!-- Solar Panels -->
+  <g>
+    <!-- Row 1 -->
+    <rect x="250" y="120" width="60" height="40" fill="#2E4053" stroke="#333" stroke-width="1"/>
+    <rect x="320" y="120" width="60" height="40" fill="#2E4053" stroke="#333" stroke-width="1"/>
+    <rect x="390" y="120" width="60" height="40" fill="#2E4053" stroke="#333" stroke-width="1"/>
+    <rect x="460" y="120" width="60" height="40" fill="#2E4053" stroke="#333" stroke-width="1"/>
+    
+    <!-- Row 2 -->
+    <rect x="250" y="170" width="60" height="40" fill="#2E4053" stroke="#333" stroke-width="1"/>
+    <rect x="320" y="170" width="60" height="40" fill="#2E4053" stroke="#333" stroke-width="1"/>
+    <rect x="390" y="170" width="60" height="40" fill="#2E4053" stroke="#333" stroke-width="1"/>
+    <rect x="460" y="170" width="60" height="40" fill="#2E4053" stroke="#333" stroke-width="1"/>
+  </g>
+  
+  <!-- Maintenance Worker 1 on Roof -->
+  <g transform="translate(280, 150)">
+    <!-- Body -->
+    <circle cx="0" cy="0" r="10" fill="#3498DB"/>
+    <rect x="-5" y="10" width="10" height="20" fill="#3498DB"/>
+    
+    <!-- Arms -->
+    <line x1="-5" y1="15" x2="-15" y2="5" stroke="#3498DB" stroke-width="3"/>
+    <line x1="5" y1="15" x2="15" y2="5" stroke="#3498DB" stroke-width="3"/>
+    
+    <!-- Legs -->
+    <line x1="-3" y1="30" x2="-8" y2="45" stroke="#3498DB" stroke-width="3"/>
+    <line x1="3" y1="30" x2="8" y2="45" stroke="#3498DB" stroke-width="3"/>
+    
+    <!-- Hard Hat -->
+    <path d="M-10,-5 Q0,-15 10,-5" fill="#F9A826" stroke="#333" stroke-width="1"/>
+    
+    <!-- Cleaning Tool -->
+    <line x1="15" y1="5" x2="30" y2="-10" stroke="#7F8C8D" stroke-width="2"/>
+    <rect x="30" y="-20" width="20" height="10" fill="#3498DB" stroke="#333" stroke-width="1"/>
+  </g>
+  
+  <!-- Maintenance Worker 2 with Toolbox -->
+  <g transform="translate(500, 180)">
+    <!-- Body -->
+    <circle cx="0" cy="0" r="10" fill="#2ECC71"/>
+    <rect x="-5" y="10" width="10" height="20" fill="#2ECC71"/>
+    
+    <!-- Arms -->
+    <line x1="-5" y1="15" x2="-15" y2="20" stroke="#2ECC71" stroke-width="3"/>
+    <line x1="5" y1="15" x2="15" y2="20" stroke="#2ECC71" stroke-width="3"/>
+    
+    <!-- Legs -->
+    <line x1="-3" y1="30" x2="-8" y2="45" stroke="#2ECC71" stroke-width="3"/>
+    <line x1="3" y1="30" x2="8" y2="45" stroke="#2ECC71" stroke-width="3"/>
+    
+    <!-- Hard Hat -->
+    <path d="M-10,-5 Q0,-15 10,-5" fill="#F9A826" stroke="#333" stroke-width="1"/>
+    
+    <!-- Toolbox -->
+    <rect x="-20" y="20" width="15" height="10" fill="#E74C3C" stroke="#333" stroke-width="1"/>
+    <rect x="-22" y="18" width="19" height="2" fill="#C0392B" stroke="#333" stroke-width="1"/>
+  </g>
+  
+  <!-- Ladder -->
+  <g transform="translate(350, 200)">
+    <line x1="0" y1="0" x2="-20" y2="100" stroke="#F39C12" stroke-width="3"/>
+    <line x1="20" y1="0" x2="0" y2="100" stroke="#F39C12" stroke-width="3"/>
+    
+    <!-- Rungs -->
+    <line x1="0" y1="10" x2="20" y2="10" stroke="#F39C12" stroke-width="2"/>
+    <line x1="-2" y1="30" x2="18" y2="30" stroke="#F39C12" stroke-width="2"/>
+    <line x1="-4" y1="50" x2="16" y2="50" stroke="#F39C12" stroke-width="2"/>
+    <line x1="-6" y1="70" x2="14" y2="70" stroke="#F39C12" stroke-width="2"/>
+    <line x1="-8" y1="90" x2="12" y2="90" stroke="#F39C12" stroke-width="2"/>
+  </g>
+  
+  <!-- Maintenance Van -->
+  <g transform="translate(100, 380)">
+    <!-- Van Body -->
+    <rect x="0" y="0" width="120" height="50" rx="5" fill="#3498DB" stroke="#333" stroke-width="2"/>
+    <rect x="0" y="25" width="60" height="25" fill="#3498DB" stroke="#333" stroke-width="2"/>
+    
+    <!-- Windows -->
+    <rect x="10" y="5" width="30" height="15" fill="#ADD8E6" stroke="#333" stroke-width="1"/>
+    <rect x="70" y="5" width="30" height="15" fill="#ADD8E6" stroke="#333" stroke-width="1"/>
+    
+    <!-- Wheels -->
+    <circle cx="30" cy="50" r="10" fill="#333" stroke="#333" stroke-width="1"/>
+    <circle cx="90" cy="50" r="10" fill="#333" stroke="#333" stroke-width="1"/>
+    
+    <!-- Company Logo -->
+    <rect x="60" y="30" width="50" height="15" fill="#F9A826" stroke="#333" stroke-width="1"/>
+    <text x="85" y="42" font-family="Arial" font-size="8" text-anchor="middle" fill="#333">SOLAR PRO</text>
+  </g>
+  
+  <!-- Ground -->
+  <rect width="800" height="100" y="400" fill="#2ECC71"/>
+  
+  <!-- Pathway -->
+  <path d="M200 400 L250 400 L300 500 L150 500 Z" fill="#D3D3D3" stroke="#333" stroke-width="1"/>
+  
+  <!-- Maintenance Equipment on Ground -->
+  <g transform="translate(600, 380)">
+    <!-- Tool Box -->
+    <rect x="0" y="0" width="40" height="20" fill="#E74C3C" stroke="#333" stroke-width="1"/>
+    <rect x="-2" y="-2" width="44" height="2" fill="#C0392B" stroke="#333" stroke-width="1"/>
+    
+    <!-- Solar Panel for Repair -->
+    <rect x="-80" y="0" width="60" height="40" fill="#2E4053" stroke="#333" stroke-width="1"/>
+    
+    <!-- Tools -->
+    <line x1="50" y1="5" x2="70" y2="5" stroke="#7F8C8D" stroke-width="2"/>
+    <circle cx="75" cy="5" r="5" fill="#7F8C8D" stroke="#333" stroke-width="1"/>
+  </g>
+  
+  <!-- Text Label -->
+  <text x="400" y="450" font-family="Arial" font-size="24" text-anchor="middle" fill="#333">Solar System Maintenance</text>
+  
+  <!-- Reflection on panels -->
+  <g opacity="0.2">
+    <circle cx="280" cy="140" r="5" fill="white"/>
+    <circle cx="350" cy="140" r="5" fill="white"/>
+    <circle cx="420" cy="140" r="5" fill="white"/>
+    <circle cx="490" cy="140" r="5" fill="white"/>
+  </g>
+  
+  <!-- Sun rays -->
+  <g stroke="#FFDB58" stroke-width="2" opacity="0.7">
+    <line x1="650" y1="10" x2="650" y2="0" />
+    <line x1="720" y1="80" x2="730" y2="80" />
+    <line x1="580" y1="80" x2="570" y2="80" />
+    <line x1="700" y1="30" x2="710" y2="20" />
+    <line x1="600" y1="30" x2="590" y2="20" />
+    <line x1="700" y1="130" x2="710" y2="140" />
+    <line x1="600" y1="130" x2="590" y2="140" />
+  </g>
+  
+  <!-- Diagnostic Device -->
+  <g transform="translate(420, 180)">
+    <rect x="0" y="0" width="15" height="10" fill="#333" stroke="#333" stroke-width="1"/>
+    <line x1="7.5" y1="10" x2="7.5" y2="15" stroke="#333" stroke-width="1"/>
+    <line x1="7.5" y1="15" x2="0" y2="25" stroke="#333" stroke-width="1"/>
+    <rect x="2" y="2" width="11" height="6" fill="#2ECC71" stroke="#333" stroke-width="0.5"/>
+  </g>
+</svg>

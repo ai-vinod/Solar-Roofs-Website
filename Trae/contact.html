@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Solar Rooftop Solutions</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="description" content="Contact Solar Rooftop Solutions for a free consultation or quote on your solar energy project.">
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(46, 204, 113, 0.9));
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .contact-content {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-yellow);
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-details li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-details i {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-details .detail-content {
+            flex: 1;
+        }
+        
+        .contact-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark-gray);
+        }
+        
+        .contact-details p, .contact-details a {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-form h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-blue);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .map-container {
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        @media screen and (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Solar Rooftop <span>Solutions</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Contact Us</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Get in touch with our team for inquiries, quotes, or support</p>
+        </div>
+    </section>
+
+    <!-- Contact Content Section -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 data-aos="fade-up">Contact Information</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">Have questions about our solar solutions? Reach out to us using any of the following methods, and our team will get back to you as soon as possible.</p>
+                    
+                    <ul class="contact-details">
+                        <li data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="detail-content">
+                                <h4>Our Location</h4>
+                                <p>123 Solar Street, Sunshine City, SC 12345</p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-phone"></i>
+                            <div class="detail-content">
+                                <h4>Phone Number</h4>
+                                <p>(123) 456-7890</p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="400">
+                            <i class="fas fa-envelope"></i>
+                            <div class="detail-content">
+                                <h4>Email Address</h4>
+                                <p><a href="mailto:info@solarrooftopsolutions.com">info@solarrooftopsolutions.com</a></p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="500">
+                            <i class="fas fa-clock"></i>
+                            <div class="detail-content">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="success-message" id="success-message">
+                        Your message has been sent successfully. We'll get back to you soon!
+                    </div>
+                    
+                    <h3 data-aos="fade-up">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group" data-aos="fade-up" data-aos-delay="100">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                            <div class="error-message" id="name-error">Please enter your name</div>
+                        </div>
+                        
+                        <div class="form-group" data-aos="fade-up" data-aos-delay="200">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="error-message" id="email-error">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group" data-aos="fade-up" data-aos-delay="300">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        
+                        <div class="form-group" data-aos="fade-up" data-aos-delay="400">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                            <div class="error-message" id="subject-error">Please enter a subject</div>
+                        </div>
+                        
+                        <div class="form-group" data-aos="fade-up" data-aos-delay="500">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" required></textarea>
+                            <div class="error-message" id="message-error">Please enter your message</div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" data-aos="zoom-in" data-aos-delay="600">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Find Us</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Visit our office for a consultation or to learn more about our solar solutions</p>
+            </div>
+            <div class="map-container" data-aos="fade-up" data-aos-duration="1200">
+                <!-- Placeholder for map - in a real implementation, you would use Google Maps or another mapping service -->
+                <div style="background-color: #e9e9e9; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;" data-aos="zoom-in" data-aos-delay="300">
+                    <div style="text-align: center;">
+                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: #3498db; margin-bottom: 15px;"></i>
+                        <h3>Map Placeholder</h3>
+                        <p>In a real implementation, an interactive map would be displayed here.</p>
+                        <p>Our Address: 123 Solar Street, Sunshine City, SC 12345</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>About Us</h4>
+                <p>Solar Rooftop Solutions is a leading provider of premium solar energy systems for residential and commercial properties, committed to sustainability and renewable energy solutions.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#residential">Residential Solar</a></li>
+                    <li><a href="services.html#commercial">Commercial Solar</a></li>
+                    <li><a href="services.html#maintenance">Maintenance</a></li>
+                    <li><a href="services.html#consultation">Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Solar Street, Sunshine City, SC 12345</li>
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> info@solarrooftopsolutions.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Solar Rooftop Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="js/script.min.js" defer></script>
+    <script>
+        // Form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Name validation
+            const name = document.getElementById('name');
+            if (name.value.trim() === '') {
+                document.getElementById('name-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('name-error').style.display = 'none';
+            }
+            
+            // Email validation
+            const email = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                document.getElementById('email-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('email-error').style.display = 'none';
+            }
+            
+            // Subject validation
+            const subject = document.getElementById('subject');
+            if (subject.value.trim() === '') {
+                document.getElementById('subject-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('subject-error').style.display = 'none';
+            }
+            
+            // Message validation
+            const message = document.getElementById('message');
+            if (message.value.trim() === '') {
+                document.getElementById('message-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('message-error').style.display = 'none';
+            }
+            
+            // If form is valid, show success message
+            if (isValid) {
+                document.getElementById('success-message').style.display = 'block';
+                document.getElementById('contactForm').reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(function() {
+                    document.getElementById('success-message').style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>

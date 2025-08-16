@@ -1,0 +1,40 @@
+<svg width="400" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="500" fill="#f4f4f4" />
+  
+  <!-- Person Silhouette -->
+  <g transform="translate(200, 180)">
+    <!-- Head -->
+    <circle cx="0" cy="0" r="70" fill="#9B59B6" />
+    
+    <!-- Face Features -->
+    <circle cx="-25" cy="-15" r="8" fill="white" /> <!-- Left eye -->
+    <circle cx="25" cy="-15" r="8" fill="white" /> <!-- Right eye -->
+    <circle cx="-25" cy="-15" r="4" fill="#333" /> <!-- Left pupil -->
+    <circle cx="25" cy="-15" r="4" fill="#333" /> <!-- Right pupil -->
+    
+    <!-- Smile -->
+    <path d="M-30,20 Q0,50 30,20" stroke="white" stroke-width="4" fill="transparent" />
+    
+    <!-- Long Hair -->
+    <path d="M-70,-10 Q-80,-40 -70,-70 Q-40,-100 0,-100 Q40,-100 70,-70 Q80,-40 70,-10 Q70,30 60,70 Q40,100 0,100 Q-40,100 -60,70 Q-70,30 -70,-10" fill="#5D4037" />
+    
+    <!-- Business Attire -->
+    <rect x="-60" y="70" width="120" height="150" fill="#8E44AD" />
+    
+    <!-- Blouse -->
+    <polygon points="0,70 -30,70 -20,120 0,140 20,120 30,70" fill="white" />
+    
+    <!-- Necklace -->
+    <circle cx="0" cy="100" r="5" fill="gold" />
+    
+    <!-- Shoulders -->
+    <rect x="-100" y="70" width="40" height="20" fill="#8E44AD" rx="10" ry="10" />
+    <rect x="60" y="70" width="40" height="20" fill="#8E44AD" rx="10" ry="10" />
+  </g>
+  
+  <!-- Name Tag -->
+  <rect x="100" y="350" width="200" height="50" fill="#9B59B6" rx="5" ry="5" />
+  <text x="200" y="380" font-family="Arial" font-size="20" fill="white" text-anchor="middle">Emily Rodriguez</text>
+  <text x="200" y="400" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Customer Relations Manager</text>
+</svg>

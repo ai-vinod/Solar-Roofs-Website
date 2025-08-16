@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Solar Rooftop Solutions</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="description" content="Learn about Solar Rooftop Solutions, our mission, vision, and the team behind our premium solar energy systems.">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(46, 204, 113, 0.9));
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .about-content {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-image img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+        }
+        
+        .mission-vision {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+        
+        .mission-vision-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .mission-card, .vision-card {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .mission-card h3, .vision-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .mission-card h3::after, .vision-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+        }
+        
+        .mission-card h3::after {
+            background: var(--primary-yellow);
+        }
+        
+        .vision-card h3::after {
+            background: var(--primary-blue);
+        }
+        
+        .team-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+        
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--dark-gray);
+        }
+        
+        .member-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .member-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 50%;
+            color: var(--primary-blue);
+            transition: var(--transition);
+        }
+        
+        .member-social a:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        @media screen and (max-width: 992px) {
+            .about-section {
+                flex-direction: column;
+            }
+            
+            .mission-vision-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Solar Rooftop <span>Solutions</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">About Solar Rooftop Solutions</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Learn about our journey, mission, and the team behind our success</p>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-text" data-aos="fade-right">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2010, Solar Rooftop Solutions began with a simple mission: to make clean, renewable solar energy accessible to homeowners and businesses across the country. What started as a small team of passionate engineers and solar enthusiasts has grown into a leading provider of premium solar rooftop solutions.</p>
+                    <p>Over the years, we've installed thousands of solar systems, helping our clients reduce their carbon footprint while saving significantly on energy costs. Our commitment to quality, innovation, and customer satisfaction has earned us a reputation as one of the most trusted names in the solar industry.</p>
+                    <p>Today, Solar Rooftop Solutions continues to lead the way in solar technology, offering cutting-edge solutions that are efficient, durable, and aesthetically pleasing. We're proud of our journey so far and excited about the bright, sustainable future we're helping to create.</p>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <img src="images/about-company.jpg.svg" alt="Solar Rooftop Solutions Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Our Mission & Vision</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Guided by strong values and a clear vision for a sustainable future</p>
+            </div>
+            <div class="mission-vision-container">
+                <div class="mission-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Our Mission</h3>
+                    <p>To accelerate the world's transition to sustainable energy by providing high-quality, affordable solar solutions that reduce carbon emissions and energy costs for our customers.</p>
+                    <p>We are committed to excellence in every installation, exceptional customer service, and continuous innovation in solar technology. Our goal is to make the process of switching to solar energy simple, transparent, and rewarding for every client.</p>
+                </div>
+                <div class="vision-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Our Vision</h3>
+                    <p>We envision a future where clean, renewable solar energy is the primary source of power for homes and businesses worldwide. A future where energy independence is accessible to all, and where our planet's resources are preserved for generations to come.</p>
+                    <p>Solar Rooftop Solutions aims to be at the forefront of this energy revolution, setting the standard for quality, innovation, and customer satisfaction in the solar industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Meet Our Team</h2>
+                <p data-aos="fade-up" data-aos-delay="100">The passionate professionals behind SolarRoof Pro</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-image">
+                        <img src="images/team-1.jpg.svg" alt="John Smith">
+                    </div>
+                    <div class="member-info">
+                        <h3>John Smith</h3>
+                        <p>Founder & CEO</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-image">
+                        <img src="images/team-2.jpg.svg" alt="Sarah Johnson">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>Chief Technical Officer</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                    <div class="member-image">
+                        <img src="images/team-3.jpg.svg" alt="Michael Chen">
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Chen</h3>
+                        <p>Lead Solar Engineer</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+                    <div class="member-image">
+                        <img src="images/team-4.jpg.svg" alt="Emily Rodriguez">
+                    </div>
+                    <div class="member-info">
+                        <h3>Emily Rodriguez</h3>
+                        <p>Customer Relations Manager</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready to Join the Solar Revolution?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Contact us today to learn how we can help you harness the power of the sun.</p>
+            <a href="contact.html" class="cta-button" data-aos="fade-up" data-aos-delay="200">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>SolarRoof<span>Pro</span></h3>
+                <p>Premium solar rooftop solutions for residential and commercial properties.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#residential">Residential Solar</a></li>
+                    <li><a href="services.html#commercial">Commercial Solar</a></li>
+                    <li><a href="services.html#maintenance">Maintenance</a></li>
+                    <li><a href="services.html#consultation">Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Solar Street, Sunshine City, SC 12345</li>
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> info@solarrooftopsolutions.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Solar Rooftop Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="js/script.min.js" defer></script>
+</body>
+</html>

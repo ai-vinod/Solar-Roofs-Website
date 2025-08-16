@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Solar Rooftop Solutions</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="description" content="Explore our solar rooftop services including residential, commercial, and industrial solar solutions with maintenance and consultation.">
+    <style>
+        /* Services Page Specific Styles */
+        .services-hero {
+            background: linear-gradient(135deg, rgba(249, 168, 38, 0.9), rgba(46, 204, 113, 0.9));
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .services-content {
+            padding: 80px 0;
+        }
+        
+        .service-types {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            margin-bottom: 30px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+        
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            margin-bottom: 20px;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .service-features li i {
+            color: var(--primary-yellow);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        .service-card:nth-child(even) .service-features li i {
+            color: var(--primary-green);
+        }
+        
+        .features-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(249, 168, 38, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon i {
+            font-size: 1.8rem;
+            color: var(--primary-yellow);
+        }
+        
+        .feature-item:nth-child(2n) .feature-icon {
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+        
+        .feature-item:nth-child(2n) .feature-icon i {
+            color: var(--primary-green);
+        }
+        
+        .feature-item:nth-child(3n) .feature-icon {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .feature-item:nth-child(3n) .feature-icon i {
+            color: var(--primary-blue);
+        }
+        
+        .feature-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+        
+        .feature-text p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .process-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-yellow);
+            z-index: 1;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 20%;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-yellow);
+            border: 3px solid var(--primary-yellow);
+            position: relative;
+        }
+        
+        .process-step:nth-child(2) .step-number {
+            color: var(--primary-green);
+            border-color: var(--primary-green);
+        }
+        
+        .process-step:nth-child(3) .step-number {
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+        
+        .process-step:nth-child(4) .step-number {
+            color: #9b59b6;
+            border-color: #9b59b6;
+        }
+        
+        .process-step:nth-child(5) .step-number {
+            color: #e74c3c;
+            border-color: #e74c3c;
+        }
+        
+        .process-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+        
+        .process-step p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            padding: 0 10px;
+        }
+        
+        @media screen and (max-width: 992px) {
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .process-step {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 40px;
+            }
+            
+            .step-number::before,
+            .step-number::after {
+                display: none;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Solar Rooftop <span>Solutions</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Our Solar Services</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Comprehensive solar solutions tailored to your specific needs</p>
+        </div>
+    </section>
+
+    <!-- Service Types Section -->
+    <section class="service-types" id="service-types">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Solar Rooftop Solutions</h2>
+                <p data-aos="fade-up" data-aos-delay="100">We offer customized solar solutions for both residential and commercial properties</p>
+            </div>
+            
+            <div class="row">
+                <!-- Residential Solar -->
+                <div class="col-lg-6" id="residential">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-image">
+                            <img src="images/residential-solar.jpg.svg" alt="Residential Solar Installation">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-home" style="color: var(--primary-yellow);"></i> Residential Solar</h3>
+                            <p>Our residential solar solutions are designed to help homeowners reduce their electricity bills while contributing to a greener planet. We offer customized systems that perfectly match your home's energy needs and aesthetic preferences.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Customized system design based on your energy consumption</li>
+                                <li><i class="fas fa-check-circle"></i> Premium solar panels with 25+ years warranty</li>
+                                <li><i class="fas fa-check-circle"></i> Battery storage options for energy independence</li>
+                                <li><i class="fas fa-check-circle"></i> Smart monitoring systems to track performance</li>
+                                <li><i class="fas fa-check-circle"></i> Aesthetic integration with your home's architecture</li>
+                            </ul>
+                            <a href="contact.html" class="btn">Get a Free Quote</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Commercial Solar -->
+                <div class="col-lg-6" id="commercial">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-image">
+                            <img src="images/commercial-solar.jpg.svg" alt="Commercial Solar Installation">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-building" style="color: var(--primary-green);"></i> Commercial Solar</h3>
+                            <p>Our commercial solar solutions help businesses reduce operational costs, meet sustainability goals, and enhance their brand image. We design and install large-scale systems optimized for maximum return on investment.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Comprehensive energy audit and ROI analysis</li>
+                                <li><i class="fas fa-check-circle"></i> High-efficiency commercial-grade solar panels</li>
+                                <li><i class="fas fa-check-circle"></i> Custom mounting solutions for flat or sloped roofs</li>
+                                <li><i class="fas fa-check-circle"></i> Advanced monitoring and management systems</li>
+                                <li><i class="fas fa-check-circle"></i> Financing options and tax incentive guidance</li>
+                            </ul>
+                            <a href="contact.html" class="btn">Request a Consultation</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Maintenance -->
+                <div class="col-lg-6" id="maintenance">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-image">
+                            <img src="images/solar-maintenance.jpg.svg" alt="Solar System Maintenance">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-tools" style="color: var(--primary-blue);"></i> Maintenance & Repairs</h3>
+                            <p>Keep your solar system performing at its best with our comprehensive maintenance and repair services. Our team of certified technicians ensures your system operates efficiently for decades.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Regular system inspections and performance checks</li>
+                                <li><i class="fas fa-check-circle"></i> Panel cleaning and efficiency optimization</li>
+                                <li><i class="fas fa-check-circle"></i> Inverter maintenance and troubleshooting</li>
+                                <li><i class="fas fa-check-circle"></i> Rapid response repair services</li>
+                                <li><i class="fas fa-check-circle"></i> System upgrades and component replacements</li>
+                            </ul>
+                            <a href="contact.html" class="btn">Schedule Maintenance</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Consultation -->
+                <div class="col-lg-6" id="consultation">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-image">
+                            <img src="images/solar-consultation.jpg.svg" alt="Solar Consultation">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-comments" style="color: #9b59b6;"></i> Consultation & Design</h3>
+                            <p>Not sure where to start? Our expert consultants provide comprehensive guidance on solar adoption, from initial assessment to system design and financial planning.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Site assessment and solar potential analysis</li>
+                                <li><i class="fas fa-check-circle"></i> Energy consumption evaluation</li>
+                                <li><i class="fas fa-check-circle"></i> Custom system design and visualization</li>
+                                <li><i class="fas fa-check-circle"></i> Financial modeling and ROI projections</li>
+                                <li><i class="fas fa-check-circle"></i> Guidance on incentives, rebates, and financing</li>
+                            </ul>
+                            <a href="contact.html" class="btn">Book a Consultation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Key Features</h2>
+                <p data-aos="fade-up" data-aos-delay="100">What makes our solar solutions stand out from the competition</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>High Efficiency</h3>
+                        <p>Our premium solar panels convert more sunlight into electricity, maximizing your energy production and savings even in less-than-ideal conditions.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Exceptional Durability</h3>
+                        <p>Built to withstand harsh weather conditions, our solar rooftops have a lifespan of 25+ years with minimal degradation in performance.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Energy Storage</h3>
+                        <p>Our optional battery systems store excess energy for use during nighttime or power outages, providing true energy independence.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Outage Protection</h3>
+                        <p>Stay powered during grid failures with our advanced backup systems and smart energy management solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Smart Monitoring</h3>
+                        <p>Track your system's performance in real-time with our user-friendly mobile app and web dashboard.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="350">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Eco-Friendly</h3>
+                        <p>Reduce your carbon footprint and contribute to a sustainable future with clean, renewable solar energy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Process Section -->
+    <section class="installation-process">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Our Installation Process</h2>
+                <p data-aos="fade-up" data-aos-delay="100">A simple, transparent approach to bringing solar power to your property</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>Initial assessment of your energy needs and roof suitability</p>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">2</div>
+                    <h3>Custom Design</h3>
+                    <p>Tailored system design based on your energy requirements</p>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">3</div>
+                    <h3>Installation</h3>
+                    <p>Professional installation by our certified technicians</p>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">4</div>
+                    <h3>Inspection</h3>
+                    <p>Quality checks and necessary approvals from authorities</p>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="600">
+                    <div class="step-number">5</div>
+                    <h3>Activation</h3>
+                    <p>System activation and monitoring setup</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready to Harness the Power of the Sun?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Contact us today for a free consultation and quote. Start your journey toward energy independence.</p>
+            <a href="contact.html" class="cta-button" data-aos="fade-up" data-aos-delay="200">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Solar Rooftop <span>Solutions</span></h3>
+                <p>Premium solar rooftop solutions for residential and commercial properties.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#residential">Residential Solar</a></li>
+                    <li><a href="services.html#commercial">Commercial Solar</a></li>
+                    <li><a href="services.html#maintenance">Maintenance</a></li>
+                    <li><a href="services.html#consultation">Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Solar Street, Sunshine City, SC 12345</li>
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> info@solarrooftopsolutions.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Solar Rooftop Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="js/script.min.js" defer></script>
+</body>
+</html>

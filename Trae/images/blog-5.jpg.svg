@@ -1,0 +1,76 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f5f5f5"/>
+  
+  <!-- House Outline -->
+  <rect x="150" y="200" width="300" height="200" fill="#E8E8E8" stroke="#333" stroke-width="2"/>
+  <polygon points="150,200 300,100 450,200" fill="#708090" stroke="#333" stroke-width="2"/>
+  
+  <!-- Person on Roof -->
+  <circle cx="300" cy="180" r="20" fill="#FFD700" stroke="#333" stroke-width="1"/>  <!-- Head -->
+  <line x1="300" y1="200" x2="300" y2="240" stroke="#333" stroke-width="3"/>  <!-- Body -->
+  <line x1="300" y1="220" x2="270" y2="240" stroke="#333" stroke-width="3"/>  <!-- Left Arm -->
+  <line x1="300" y1="220" x2="330" y2="240" stroke="#333" stroke-width="3"/>  <!-- Right Arm -->
+  <line x1="300" y1="240" x2="280" y2="270" stroke="#333" stroke-width="3"/>  <!-- Left Leg -->
+  <line x1="300" y1="240" x2="320" y2="270" stroke="#333" stroke-width="3"/>  <!-- Right Leg -->
+  
+  <!-- Safety Harness -->
+  <line x1="300" y1="210" x2="350" y2="170" stroke="#FF0000" stroke-width="2" stroke-dasharray="5,2"/>
+  <line x1="350" y1="170" x2="380" y2="170" stroke="#FF0000" stroke-width="2"/>
+  
+  <!-- Solar Panel Being Installed -->
+  <rect x="250" y="150" width="100" height="60" fill="#1E3F66" stroke="#333" stroke-width="1"/>
+  
+  <!-- Solar Panel Grid Lines -->
+  <line x1="250" y1="170" x2="350" y2="170" stroke="#000" stroke-width="1"/>
+  <line x1="250" y1="190" x2="350" y2="190" stroke="#000" stroke-width="1"/>
+  <line x1="270" y1="150" x2="270" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="290" y1="150" x2="290" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="310" y1="150" x2="310" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="330" y1="150" x2="330" y2="210" stroke="#000" stroke-width="1"/>
+  
+  <!-- Tools -->
+  <rect x="200" y="250" width="30" height="10" fill="#A52A2A" stroke="#333" stroke-width="1"/>  <!-- Screwdriver Handle -->
+  <rect x="230" y="252" width="20" height="6" fill="#C0C0C0" stroke="#333" stroke-width="1"/>  <!-- Screwdriver Shaft -->
+  
+  <rect x="400" y="250" width="30" height="15" fill="#A52A2A" stroke="#333" stroke-width="1"/>  <!-- Hammer Handle -->
+  <rect x="430" y="245" width="15" height="25" fill="#C0C0C0" stroke="#333" stroke-width="1"/>  <!-- Hammer Head -->
+  
+  <circle cx="480" cy="260" r="15" fill="#FFFF00" stroke="#333" stroke-width="1"/>  <!-- Measuring Tape -->
+  
+  <!-- Instruction Manual -->
+  <rect x="500" y="150" width="200" height="250" fill="white" stroke="#333" stroke-width="2"/>
+  
+  <!-- Manual Title -->
+  <rect x="520" y="170" width="160" height="30" fill="#1E3F66"/>
+  <text x="600" y="190" font-family="Arial" font-size="14" text-anchor="middle" fill="white">DIY INSTALLATION</text>
+  
+  <!-- Manual Steps -->
+  <line x1="520" y1="220" x2="680" y2="220" stroke="#333" stroke-width="1"/>
+  <circle cx="530" cy="240" r="10" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+  <text x="530" y="245" font-family="Arial" font-size="14" text-anchor="middle" fill="white">1</text>
+  <text x="600" y="245" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Assess Your Roof</text>
+  
+  <line x1="520" y1="260" x2="680" y2="260" stroke="#333" stroke-width="1"/>
+  <circle cx="530" cy="280" r="10" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+  <text x="530" y="285" font-family="Arial" font-size="14" text-anchor="middle" fill="white">2</text>
+  <text x="600" y="285" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Gather Safety Equipment</text>
+  
+  <line x1="520" y1="300" x2="680" y2="300" stroke="#333" stroke-width="1"/>
+  <circle cx="530" cy="320" r="10" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+  <text x="530" y="325" font-family="Arial" font-size="14" text-anchor="middle" fill="white">3</text>
+  <text x="600" y="325" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Install Mounting Hardware</text>
+  
+  <line x1="520" y1="340" x2="680" y2="340" stroke="#333" stroke-width="1"/>
+  <circle cx="530" cy="360" r="10" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+  <text x="530" y="365" font-family="Arial" font-size="14" text-anchor="middle" fill="white">4</text>
+  <text x="600" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Attach Solar Panels</text>
+  
+  <!-- Warning Symbol -->
+  <polygon points="600,120 580,150 620,150" fill="#FFD700" stroke="#333" stroke-width="1"/>
+  <text x="600" y="145" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">!</text>
+  
+  <!-- Title -->
+  <text x="400" y="450" font-family="Arial" font-size="24" text-anchor="middle" fill="#333">DIY Solar Installation: A Step-by-Step Guide</text>
+  <text x="400" y="480" font-family="Arial" font-size="16" text-anchor="middle" fill="#666">Safety Tips and Best Practices</text>
+</svg>

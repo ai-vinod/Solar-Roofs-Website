@@ -1,0 +1,124 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f4f4f4" />
+  
+  <!-- Office Building -->
+  <g transform="translate(50, 50)">
+    <!-- Building Structure -->
+    <rect x="100" y="100" width="500" height="400" fill="#EEEEEE" stroke="#333333" stroke-width="2" />
+    
+    <!-- Windows -->
+    <g>
+      <!-- Row 1 -->
+      <rect x="150" y="150" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      <rect x="250" y="150" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      <rect x="350" y="150" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      <rect x="450" y="150" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      
+      <!-- Row 2 -->
+      <rect x="150" y="250" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      <rect x="250" y="250" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      <rect x="350" y="250" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      <rect x="450" y="250" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      
+      <!-- Row 3 -->
+      <rect x="150" y="350" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      <rect x="250" y="350" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      <rect x="350" y="350" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+      <rect x="450" y="350" width="60" height="60" fill="#3498DB" stroke="#333333" stroke-width="1" />
+    </g>
+    
+    <!-- Door -->
+    <rect x="300" y="450" width="100" height="50" fill="#2C3E50" stroke="#333333" stroke-width="2" />
+    
+    <!-- Company Sign -->
+    <rect x="250" y="70" width="200" height="50" fill="#F9A826" stroke="#333333" stroke-width="2" rx="5" ry="5" />
+    <text x="270" y="105" font-family="Arial" font-size="24" font-weight="bold" fill="#FFFFFF">SolarRoof Pro</text>
+  </g>
+  
+  <!-- Solar Panels on Roof -->
+  <g transform="translate(50, 50)">
+    <rect x="100" y="80" width="500" height="20" fill="#7F8C8D" />
+    
+    <!-- Solar Panel Array -->
+    <g>
+      <rect x="120" y="40" width="70" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="1" />
+      <rect x="200" y="40" width="70" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="1" />
+      <rect x="280" y="40" width="70" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="1" />
+      <rect x="360" y="40" width="70" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="1" />
+      <rect x="440" y="40" width="70" height="40" fill="#2C3E50" stroke="#7F8C8D" stroke-width="1" />
+    </g>
+  </g>
+  
+  <!-- People in front of building -->
+  <g transform="translate(50, 50)">
+    <!-- Person 1 -->
+    <g transform="translate(200, 520)">
+      <circle cx="0" cy="-20" r="15" fill="#F9A826" /> <!-- Head -->
+      <line x1="0" y1="-5" x2="0" y2="25" stroke="#333" stroke-width="3" /> <!-- Body -->
+      <line x1="0" y1="5" x2="-15" y2="15" stroke="#333" stroke-width="3" /> <!-- Left arm -->
+      <line x1="0" y1="5" x2="15" y2="15" stroke="#333" stroke-width="3" /> <!-- Right arm -->
+      <line x1="0" y1="25" x2="-10" y2="45" stroke="#333" stroke-width="3" /> <!-- Left leg -->
+      <line x1="0" y1="25" x2="10" y2="45" stroke="#333" stroke-width="3" /> <!-- Right leg -->
+    </g>
+    
+    <!-- Person 2 -->
+    <g transform="translate(250, 520)">
+      <circle cx="0" cy="-20" r="15" fill="#3498DB" /> <!-- Head -->
+      <line x1="0" y1="-5" x2="0" y2="25" stroke="#333" stroke-width="3" /> <!-- Body -->
+      <line x1="0" y1="5" x2="-15" y2="15" stroke="#333" stroke-width="3" /> <!-- Left arm -->
+      <line x1="0" y1="5" x2="15" y2="15" stroke="#333" stroke-width="3" /> <!-- Right arm -->
+      <line x1="0" y1="25" x2="-10" y2="45" stroke="#333" stroke-width="3" /> <!-- Left leg -->
+      <line x1="0" y1="25" x2="10" y2="45" stroke="#333" stroke-width="3" /> <!-- Right leg -->
+    </g>
+    
+    <!-- Person 3 -->
+    <g transform="translate(300, 520)">
+      <circle cx="0" cy="-20" r="15" fill="#2ECC71" /> <!-- Head -->
+      <line x1="0" y1="-5" x2="0" y2="25" stroke="#333" stroke-width="3" /> <!-- Body -->
+      <line x1="0" y1="5" x2="-15" y2="15" stroke="#333" stroke-width="3" /> <!-- Left arm -->
+      <line x1="0" y1="5" x2="15" y2="15" stroke="#333" stroke-width="3" /> <!-- Right arm -->
+      <line x1="0" y1="25" x2="-10" y2="45" stroke="#333" stroke-width="3" /> <!-- Left leg -->
+      <line x1="0" y1="25" x2="10" y2="45" stroke="#333" stroke-width="3" /> <!-- Right leg -->
+    </g>
+    
+    <!-- Person 4 -->
+    <g transform="translate(350, 520)">
+      <circle cx="0" cy="-20" r="15" fill="#9B59B6" /> <!-- Head -->
+      <line x1="0" y1="-5" x2="0" y2="25" stroke="#333" stroke-width="3" /> <!-- Body -->
+      <line x1="0" y1="5" x2="-15" y2="15" stroke="#333" stroke-width="3" /> <!-- Left arm -->
+      <line x1="0" y1="5" x2="15" y2="15" stroke="#333" stroke-width="3" /> <!-- Right arm -->
+      <line x1="0" y1="25" x2="-10" y2="45" stroke="#333" stroke-width="3" /> <!-- Left leg -->
+      <line x1="0" y1="25" x2="10" y2="45" stroke="#333" stroke-width="3" /> <!-- Right leg -->
+    </g>
+  </g>
+  
+  <!-- Sun -->
+  <circle cx="700" cy="100" r="50" fill="#F9A826" />
+  <circle cx="700" cy="100" r="60" fill="#F9A826" opacity="0.3" />
+  <circle cx="700" cy="100" r="70" fill="#F9A826" opacity="0.1" />
+  
+  <!-- Sun rays -->
+  <g stroke="#F9A826" stroke-width="3" opacity="0.7">
+    <line x1="700" y1="30" x2="700" y2="10" />
+    <line x1="700" y1="170" x2="700" y2="190" />
+    <line x1="630" y1="100" x2="610" y2="100" />
+    <line x1="770" y1="100" x2="790" y2="100" />
+    <line x1="650" y1="50" x2="635" y2="35" />
+    <line x1="750" y1="150" x2="765" y2="165" />
+    <line x1="650" y1="150" x2="635" y2="165" />
+    <line x1="750" y1="50" x2="765" y2="35" />
+  </g>
+  
+  <!-- Trees -->
+  <g>
+    <circle cx="100" cy="500" r="30" fill="#2ECC71" />
+    <rect x="95" y="500" width="10" height="50" fill="#8B4513" />
+    
+    <circle cx="650" cy="500" r="30" fill="#2ECC71" />
+    <rect x="645" y="500" width="10" height="50" fill="#8B4513" />
+  </g>
+  
+  <!-- Ground -->
+  <rect x="0" y="550" width="800" height="50" fill="#2ECC71" />
+</svg>

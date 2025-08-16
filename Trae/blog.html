@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Solar Rooftop Solutions</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Library for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="description" content="Read our latest blog posts about solar energy, rooftop solutions, and sustainable living tips.">
+    <style>
+        /* Blog Page Specific Styles */
+        .blog-hero {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(46, 204, 113, 0.9));
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .blog-content {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-sidebar {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .blog-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+        
+        .blog-post {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            background-color: var(--white);
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .blog-post:hover .blog-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-content-box {
+            padding: 25px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+        
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-meta i {
+            margin-right: 5px;
+            color: var(--primary-yellow);
+        }
+        
+        .blog-content-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+            transition: var(--transition);
+        }
+        
+        .blog-content-box h3:hover {
+            color: var(--primary-blue);
+        }
+        
+        .blog-content-box p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+        
+        .sidebar-widget {
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-widget h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-yellow);
+            color: var(--dark-gray);
+        }
+        
+        .recent-post {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .recent-post:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .recent-post-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .recent-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .recent-post-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        
+        .recent-post-info h4 a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .recent-post-info h4 a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .recent-post-info span {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        .categories-list,
+        .tags-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .categories-list li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .categories-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .categories-list a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .categories-list a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .categories-list span {
+            background-color: var(--primary-yellow);
+            color: var(--white);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .tags-list li {
+            margin: 0 5px 10px 0;
+        }
+        
+        .tags-list a {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #e0e0e0;
+            color: var(--gray);
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+        
+        .tags-list a:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .search-form {
+            display: flex;
+        }
+        
+        .search-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 30px 0 0 30px;
+            outline: none;
+            font-family: var(--font-primary);
+        }
+        
+        .search-form button {
+            padding: 10px 20px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .search-form button:hover {
+            background-color: var(--primary-green);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .pagination a {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 5px;
+            background-color: var(--light-gray);
+            color: var(--gray);
+            border-radius: 5px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .pagination a:hover,
+        .pagination a.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        @media screen and (max-width: 992px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-sidebar {
+                position: static;
+                margin-top: 50px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Solar Rooftop <span>Solutions</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Our Solar Blog</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Latest news, insights, and tips about solar energy solutions</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-container">
+                <div class="blog-main" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="blog-grid">
+                        <!-- Blog Post 1 -->
+                        <article class="blog-post" data-aos="fade-up" data-aos-delay="100">
+                            <div class="blog-image" data-aos="zoom-in" data-aos-delay="150">
+                                <img src="images/blog-1.jpg.svg" alt="Solar Panel Efficiency">
+                            </div>
+                            <div class="blog-content-box">
+                                <div class="blog-meta" data-aos="fade-right" data-aos-delay="200">
+                                    <span><i class="fas fa-calendar-alt"></i> June 15, 2023</span>
+                                    <span><i class="fas fa-user"></i> Admin</span>
+                                </div>
+                                <h3 data-aos="fade-up" data-aos-delay="250"><a href="#">Maximizing Solar Panel Efficiency: Tips and Tricks</a></h3>
+                                <p data-aos="fade-up" data-aos-delay="300">Learn how to get the most out of your solar panel installation with these expert tips on placement, maintenance, and optimization techniques.</p>
+                                <a href="#" class="read-more" data-aos="fade-up" data-aos-delay="350">Read More</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Blog Post 2 -->
+                        <article class="blog-post" data-aos="fade-up" data-aos-delay="200">
+                            <div class="blog-image">
+                                <img src="images/blog-2.jpg.svg" alt="Solar Tax Credits">
+                            </div>
+                            <div class="blog-content-box">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> May 28, 2023</span>
+                                    <span><i class="fas fa-user"></i> Admin</span>
+                                </div>
+                                <h3><a href="#">2023 Solar Tax Credits and Incentives: What You Need to Know</a></h3>
+                                <p>Discover the latest tax credits, rebates, and financial incentives available for solar installations in 2023 and how you can take advantage of them.</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Blog Post 3 -->
+                        <article class="blog-post" data-aos="fade-up" data-aos-delay="300">
+                            <div class="blog-image">
+                                <img src="images/blog-3.jpg.svg" alt="Battery Storage">
+                            </div>
+                            <div class="blog-content-box">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> May 10, 2023</span>
+                                    <span><i class="fas fa-user"></i> Admin</span>
+                                </div>
+                                <h3><a href="#">The Future of Solar Battery Storage: Technologies and Trends</a></h3>
+                                <p>Explore the latest advancements in solar battery storage technology and how these innovations are making renewable energy more reliable and accessible.</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Blog Post 4 -->
+                        <article class="blog-post" data-aos="fade-up" data-aos-delay="400">
+                            <div class="blog-image">
+                                <img src="images/blog-4.jpg.svg" alt="Commercial Solar">
+                            </div>
+                            <div class="blog-content-box">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> April 22, 2023</span>
+                                    <span><i class="fas fa-user"></i> Admin</span>
+                                </div>
+                                <h3><a href="#">Commercial Solar: ROI and Business Benefits Explained</a></h3>
+                                <p>A comprehensive guide to understanding the return on investment and various business benefits of installing commercial solar power systems.</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Blog Post 5 -->
+                        <article class="blog-post" data-aos="fade-up" data-aos-delay="500">
+                            <div class="blog-image">
+                                <img src="images/blog-5.jpg.svg" alt="Solar Maintenance">
+                            </div>
+                            <div class="blog-content-box">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> April 5, 2023</span>
+                                    <span><i class="fas fa-user"></i> Admin</span>
+                                </div>
+                                <h3><a href="#">Essential Maintenance Tips for Your Solar Panel System</a></h3>
+                                <p>Keep your solar panels performing at their best with these essential maintenance tips and best practices for long-term efficiency and durability.</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Blog Post 6 -->
+                        <article class="blog-post" data-aos="fade-up" data-aos-delay="600">
+                            <div class="blog-image">
+                                <img src="images/blog-6.jpg.svg" alt="Solar Myths">
+                            </div>
+                            <div class="blog-content-box">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> March 18, 2023</span>
+                                    <span><i class="fas fa-user"></i> Admin</span>
+                                </div>
+                                <h3><a href="#">Debunking Common Solar Energy Myths and Misconceptions</a></h3>
+                                <p>Separating fact from fiction: addressing the most common myths and misconceptions about solar energy and rooftop installations.</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination" data-aos="fade-up">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#"><i class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Sidebar -->
+                <aside class="blog-sidebar" data-aos="fade-left" data-aos-duration="1000">
+                    <!-- Search Widget -->
+                    <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Search</h3>
+                        <form class="search-form">
+                            <input type="text" placeholder="Search...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Recent Posts</h3>
+                        <div class="recent-post" data-aos="fade-up" data-aos-delay="250">
+                            <div class="recent-post-image">
+                                <img src="images/blog-1.jpg.svg" alt="Recent Post">
+                            </div>
+                            <div class="recent-post-info">
+                                <h4><a href="#">Maximizing Solar Panel Efficiency</a></h4>
+                                <span>June 15, 2023</span>
+                            </div>
+                        </div>
+                        <div class="recent-post" data-aos="fade-up" data-aos-delay="300">
+                            <div class="recent-post-image">
+                                <img src="images/blog-2.jpg.svg" alt="Recent Post">
+                            </div>
+                            <div class="recent-post-info">
+                                <h4><a href="#">2023 Solar Tax Credits</a></h4>
+                                <span>May 28, 2023</span>
+                            </div>
+                        </div>
+                        <div class="recent-post" data-aos="fade-up" data-aos-delay="350">
+                            <div class="recent-post-image">
+                                <img src="images/blog-3.jpg.svg" alt="Recent Post">
+                            </div>
+                            <div class="recent-post-info">
+                                <h4><a href="#">The Future of Solar Battery Storage</a></h4>
+                                <span>May 10, 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="400">
+                        <h3>Categories</h3>
+                        <ul class="categories-list">
+                            <li data-aos="fade-left" data-aos-delay="450"><a href="#">Solar Technology <span>8</span></a></li>
+                            <li data-aos="fade-left" data-aos-delay="500"><a href="#">Residential Solar <span>12</span></a></li>
+                            <li data-aos="fade-left" data-aos-delay="550"><a href="#">Commercial Solar <span>6</span></a></li>
+                            <li data-aos="fade-left" data-aos-delay="600"><a href="#">Energy Storage <span>4</span></a></li>
+                            <li data-aos="fade-left" data-aos-delay="650"><a href="#">Maintenance Tips <span>7</span></a></li>
+                            <li data-aos="fade-left" data-aos-delay="700"><a href="#">Solar Incentives <span>5</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tags Widget -->
+                    <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="750">
+                        <h3>Tags</h3>
+                        <ul class="tags-list">
+                            <li data-aos="zoom-in" data-aos-delay="800"><a href="#">Solar Panels</a></li>
+                            <li data-aos="zoom-in" data-aos-delay="850"><a href="#">Renewable Energy</a></li>
+                            <li data-aos="zoom-in" data-aos-delay="900"><a href="#">Green Living</a></li>
+                            <li data-aos="zoom-in" data-aos-delay="950"><a href="#">Energy Efficiency</a></li>
+                            <li data-aos="zoom-in" data-aos-delay="1000"><a href="#">Sustainability</a></li>
+                            <li data-aos="zoom-in" data-aos-delay="1050"><a href="#">Clean Energy</a></li>
+                            <li data-aos="zoom-in" data-aos-delay="1100"><a href="#">Solar Power</a></li>
+                            <li data-aos="zoom-in" data-aos-delay="1150"><a href="#">Eco-Friendly</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready to Start Your Solar Journey?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Contact us today for a free consultation and join our growing list of satisfied customers.</p>
+            <a href="contact.html" class="cta-button" data-aos="fade-up" data-aos-delay="200">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Solar Rooftop <span>Solutions</span></h3>
+                <p>Premium solar rooftop solutions for residential and commercial properties.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#residential">Residential Solar</a></li>
+                    <li><a href="services.html#commercial">Commercial Solar</a></li>
+                    <li><a href="services.html#maintenance">Maintenance</a></li>
+                    <li><a href="services.html#consultation">Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Solar Street, Sunshine City, SC 12345</li>
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> info@solarrooftopsolutions.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Solar Rooftop Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="js/script.min.js" defer></script>
+</body>
+</html>

@@ -23,7 +23,12 @@ body {
     line-height: 1.6;
     color: var(--dark-gray);
     overflow-x: hidden;
-    background-color: #f9f9f7; /* Light cream/beige background instead of white */
+    background-color: #f9f9f7;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(249, 168, 38, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(46, 204, 113, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(52, 152, 219, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
 }
 
 a {
@@ -212,6 +217,11 @@ header {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+/* First slide visible by default */
+.slide:first-child {
+    display: block;
 }
 
 .slide img {
@@ -585,7 +595,8 @@ footer {
     transition: background-color 0.3s ease;
 }
 
-.dot.active {
+.dot.active,
+.dot:first-child {
     background-color: var(--white);
 }
 
